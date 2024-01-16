@@ -16,3 +16,11 @@ git branch -M main
 git push -u origin main
 
 ============== ===================
+
+Class Link https://us06web.zoom.us/meeting/register/tZErfuChpjoqHNSPXjMx9ooVZT4FNOkSA7Dk              ********** Class zoom
+
+DEVOPS CLASS VIDEOS | January 2024 Batch :
+https://www.youtube.com/playlist?list=PLQ0t4AtIOGpoBwrsH1aqlqkXht7JDyQog
+
+GOOGLE DRIVE 
+https://drive.google.com/drive/folders/1hSbz9eKH5Pb6t3ZA_OxhlxcRqUAcEyi8?usp=drive_link 
