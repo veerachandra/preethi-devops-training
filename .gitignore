@@ -1,0 +1,2 @@
+#not tracking pem file for the AWS-EC2 linux virutal instance
+*.pem

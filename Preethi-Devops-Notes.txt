@@ -1,0 +1,18 @@
+ssh -i "veera-kernal-ec2-instance.pem" ec2-user@ec2-13-201-118-33.ap-south-1.compute.amazonaws.com
+
+========================================
+echo "# GitAndGithubNotesRepo" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin https://github.com/veerachandra/preethi-devops-training.git
+git push -u origin main
+
+push an existing repository from the command line
+=================================================
+git remote add origin https://github.com/veerachandra/GitAndGithubNotesRepo.git
+git branch -M main
+git push -u origin main
+
+============== ===================
