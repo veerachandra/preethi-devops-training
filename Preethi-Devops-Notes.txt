@@ -24,3 +24,140 @@ https://www.youtube.com/playlist?list=PLQ0t4AtIOGpoBwrsH1aqlqkXht7JDyQog
 
 GOOGLE DRIVE 
 https://drive.google.com/drive/folders/1hSbz9eKH5Pb6t3ZA_OxhlxcRqUAcEyi8?usp=drive_link 
+
+------------------------------------------------------------------------------------------------
+
+ssh -i "veera-kernal-ec2-instance.pem" ec2-user@ec2-13-201-118-33.ap-south-1.compute.amazonaws.com
+
+
+scp -i veera-kernal-ec2-instance.pem ec2-user@ec2-13-201-118-33.ap-south-1.compute.amazonaws.com:/tmp/linux-commands.txt D:\Veera_notes_2024\preethi-devops-training
+D:\Veera_notes_2024\preethi-devops-training
+
+Here , we will learn about how to exchange files between local machine and AWS EC2 Instance.
+
+Related Links
+
+https://medium.com/@rahul26021999/how-to-create-a-ubuntu-20-04-server-on-aws-ec2-elastic-cloud-computing-5b423b5bf635
+https://medium.com/@rahul26021999/how-to-connect-to-ec2-instance-aws-from-windows-ubuntu-da97c0cc9c8
+Download a file from AWS EC2 Instance
+By running this command you can download a file from AWS EC2 instance to your local machine.
+
+$ sudo scp -i path/to/mykey.pem user@ec2–49–252–8–93.ap-south-1.compute.amazonaws.com:path/remote/filename path/local/directory
+Download a directory from AWS EC2 Instance
+By running this command you can download a folder from AWS EC2 instance to your local machine.
+
+$ sudo scp -i path/to/mykey.pem -r user@ec2–49–252–8–93.ap-south-1.compute.amazonaws.com:path/remote/directory path/local/directory
+# Hack 1 : To download folder from AWS EC2, You can archive it and then download it like a file .
+
+Upload a file to AWS EC2 Instance from local
+By running this command you can upload a file from your local machine to AWS EC2 instance.
+
+$ sudo scp -i path/to/mykey.pem path/local/filename user@ec2–49–252–8–93.ap-south-1.compute.amazonaws.com:path/remote/directory
+Upload a directory to AWS EC2 Instance from local
+By running this command you can upload a folder from your local machine to AWS EC2 instance.
+
+$ sudo scp -i path/to/mykey.pem -r path/local/directoryName user@ec2–49–252–8–93.ap-south-1.compute.amazonaws.com:path/remote/directory
+
+=====================================
+
+Transferring Files Using PuTTY Secure Copy (PSCP)
+-----------------------------------------------  copy Ec2 ec2-user creted file to local windows-ubuntu-da97c0cc9c8
+
+18-JAN-2024
+===========
+AWS EC2 linux instance : java, jenkins installaion steps
+Refer this video: How to Install Jenkins on Amazon Linux EC2 Instance
+https://www.youtube.com/watch?v=CzgthcwLUHM Cloud Champ
+===========================================================
+
+COMMANDS to install and set up Jenkins:
+Ensure that your software packages are up to date on your instance by using the following command to perform a quick software update:
+ sudo yum update –y
+
+Add the Jenkins repo using the following command:
+sudo wget -O /etc/yum.repos.d/jenkins.repo \
+    https://pkg.jenkins.io/redhat-stable/...
+
+Import a key file from Jenkins-CI to enable installation from the package:
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/...
+
+sudo yum upgrade
+
+Install Java:
+sudo amazon-linux-extras install java-openjdk11 -y
+
+Install Jenkins:
+sudo yum install jenkins -y
+
+Enable the Jenkins service to start at boot:
+sudo systemctl enable jenkins
+
+Start Jenkins as a service:
+sudo systemctl start jenkins
+
+You can check the status of the Jenkins service using the command:
+sudo systemctl status jenkins
+=============================================
+
+[root@ip-172-31-43-192 ~]# history 50
+   35  ls
+   36  cd webapps
+   37  wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+   38  ls
+   39  systemctl status tomcat
+   40  systemctl restart tomcat
+   41  ls
+   42  netstat -lntup | grep 5398
+   43  netstat -lntup
+   44  netstat -lntup | grep 7776
+   45  cd ..
+   46  ls
+   47  cd ..
+   48  exit
+   49  systemctl status
+   50  clear
+   51  systemctl status tomcat
+   52  systemctl stop tomcat
+   53  clear
+   54  systemctl status tomcat
+   55  jenkins
+   56  jenkins --version
+   57  httpd --version
+   58  tomcat --version
+   59  sudo yum update -y
+   60  sudo wget -O /etc/yum.repos.d/jenkins.repo
+   61  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   62  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   63  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+   64  sudo yum upgrade
+   65  sudo amazon-linux-extras install java-openjdk11 -y
+   66  sudo yum install jenkins -y
+   67  systemctl enable jenkins
+   68  sudo systemctl enable jenkins
+   69  rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+   70  sudo yum install jenkins -y
+   71  sudo systemctl enable jenkins
+   72  sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+   73  sudo yum install jenkins -y
+   74  sudo systemctl enable jenkins
+   75  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+   76  sudo yum install jenkins -y
+   77  sudo systemctl enable jenkins
+   78  sudo systemctl start jenkins
+   79  sudo systemctl status jenkins
+   80  sudo systemctl start jenkins
+   81  sudo systemctl status jenkins
+   82  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
+Also refere: https://stackoverflow.com/questions/61344317/im-getting-error-public-key-for-jenkins-2-232-1-1-noarch-rpm-is-not-installed
+
+Jenkins is changing their signing keys again.
+Beginning with LTS 2.387.2 and weekly 2.397, releases will be signed with a new GPG key.
+
+The correct public key can be found on the page for Jenkins Redhat Packages and in Jenkins installation handbook. Just run the command below to import it:
+
+Long Term Support release:
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+
+=================================================
+
