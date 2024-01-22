@@ -161,3 +161,337 @@ sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
 =================================================
 
+Jan-23-2023::
+Linux commands
+[root@ip-172-31-43-192 target]# history 150
+   40  systemctl restart tomcat
+   41  ls
+   42  netstat -lntup | grep 5398
+   43  netstat -lntup
+   44  netstat -lntup | grep 7776
+   45  cd ..
+   46  ls
+   47  cd ..
+   48  exit
+   49  systemctl status
+   50  clear
+   51  systemctl status tomcat
+   52  systemctl stop tomcat
+   53  clear
+   54  systemctl status tomcat
+   55  jenkins
+   56  jenkins --version
+   57  httpd --version
+   58  tomcat --version
+   59  sudo yum update -y
+   60  sudo wget -O /etc/yum.repos.d/jenkins.repo
+   61  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   62  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   63  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+   64  sudo yum upgrade
+   65  sudo amazon-linux-extras install java-openjdk11 -y
+   66  sudo yum install jenkins -y
+   67  systemctl enable jenkins
+   68  sudo systemctl enable jenkins
+   69  rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+   70  sudo yum install jenkins -y
+   71  sudo systemctl enable jenkins
+   72  sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+   73  sudo yum install jenkins -y
+   74  sudo systemctl enable jenkins
+   75  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+   76  sudo yum install jenkins -y
+   77  sudo systemctl enable jenkins
+   78  sudo systemctl start jenkins
+   79  sudo systemctl status jenkins
+   80  sudo systemctl start jenkins
+   81  sudo systemctl status jenkins
+   82  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+   83  clear
+   84  history 50
+   85  ls -l
+   86  exit
+   87  clear
+   88  cd /var/lib/jenkins/
+   89  ls
+   90  cd jobs
+   91  ls
+   92  exit
+   93   cd /var/lib/jenkins/
+   94  cd jobs
+   95  ls
+   96  cd git-scm-aws-ec2-job/
+   97  ls
+   98  cd builds/
+   99  ls
+  100  cd ..
+  101  ls
+  102  cd workspace/
+  103  ls
+  104  cd git-scm-aws-ec2-job/
+  105  ls
+  106  clear
+  107  systemctl status openjdk
+  108  systemctl status java
+  109  sudo /usr/sbin/alternatives --config java
+  110  sudo /usr/sbin/alternatives --config javac
+  111  mvn
+  112  sudo /usr/sbin/alternatives --config mvn
+  113  sudo /usr/sbin/alternatives --config java
+  114  clear
+  115  echo $JAVA_HOME
+  116  java --version
+  117  clear
+  118  java --version
+  119  sudo /usr/sbin/alternatives --config java
+  120  cd /usr/share/maven
+  121  yum install maven
+  122  cd /usr/share/maven
+  123  ls -l
+  124  cd ~
+  125  clear
+  126* git clone https://github.com/preethid/addressbook.git https://github.com/preethid/addressbook.git
+  127  cd addressbook/
+  128  ls
+  129  mvn compile
+  130  ls
+  131  cd  /root/addressbook/target/classes
+  132  ls
+  133  cd com
+  134  cd add
+  135  ls
+  136  cd edurekademo/
+  137  ls
+  138  cd utilities/
+  139  ls -
+  140  ls
+  141  cd /root/addressbook/
+  142  mvn package
+  143  mvn --version
+  144  alternatives --configjava
+  145  alternatives --config java
+  146  clear
+  147  vim /etc/profile
+  148  alternatives --config java
+  149  vim /etc/profile
+  150  echo $JAVA_HOME
+  151  source /etc/profile
+  152  echo $JAVA_HOME
+  153  mvn package
+  154  alternatives --config java
+  155  mvn --version
+  156  cd /usr/lib/jenkins
+  157  cd /var/lib/jenkins
+  158  ls
+  159  cd workspace/
+  160  ls
+  161  cd ~
+  162  ls
+  163  sudo yum install java-1.8.0-openjdk-devel
+  164  alternatives --config java
+  165  vim /etc/profile
+  166  :q
+  167  clear
+  168  vim /etc/profile
+  169  source /etc/profile
+  170   echo $JAVA_HOME
+  171  vim /etc/profile
+  172  source /etc/profile
+  173   echo $JAVA_HOME
+  174  alternatives --config java
+  175  vim /etc/profile
+  176  source /etc/profile
+  177   echo $JAVA_HOME
+  178  mvn --version
+  179  cd /var/lib/jnekins
+  180  cd /var/lib/jenkins
+  181  cd workspace/
+  182  ls
+  183  cd
+  184  cd /var/lib/jenkins/workspace/JENKINS-MVN-POM-PACKAGE-JOB
+  185  ls
+  186  cd target/
+  187  ls
+  188  history 100
+  189  history 150
+[root@ip-172-31-43-192 target]# history 180
+   11  vim /etc/httpd/conf/httpd.cofg
+   12  vim /etc/httpd/conf/httpd.conf
+   13  cd /var/www/html
+   14  ls
+   15  history -tail 100
+   16  history ! tail -n 20
+   17  history | tail -n 20
+   18  history | tail -n 40
+   19  systemctl stop httpd
+   20  netstat -lntup | grep 4328
+   21  netstat -lntup | grep 4326
+   22  systemctl status httpd
+   23  systemctl start httpd
+   24  netstat -lntup
+   25  netstat -lntup | grep 4474
+   26  cd ..
+   27  yum install tomcat -y
+   28  systemctl status
+   29  systemctl status tomcat
+   30  systemctl start omcat
+   31  systemctl start tomcat
+   32  systemctl status tomcat
+   33  netstat -lntup | grep 5398
+   34  cd /usr/share/tomcat
+   35  ls
+   36  cd webapps
+   37  wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war
+   38  ls
+   39  systemctl status tomcat
+   40  systemctl restart tomcat
+   41  ls
+   42  netstat -lntup | grep 5398
+   43  netstat -lntup
+   44  netstat -lntup | grep 7776
+   45  cd ..
+   46  ls
+   47  cd ..
+   48  exit
+   49  systemctl status
+   50  clear
+   51  systemctl status tomcat
+   52  systemctl stop tomcat
+   53  clear
+   54  systemctl status tomcat
+   55  jenkins
+   56  jenkins --version
+   57  httpd --version
+   58  tomcat --version
+   59  sudo yum update -y
+   60  sudo wget -O /etc/yum.repos.d/jenkins.repo
+   61  sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   62  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.repo
+   63  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+   64  sudo yum upgrade
+   65  sudo amazon-linux-extras install java-openjdk11 -y
+   66  sudo yum install jenkins -y
+   67  systemctl enable jenkins
+   68  sudo systemctl enable jenkins
+   69  rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+   70  sudo yum install jenkins -y
+   71  sudo systemctl enable jenkins
+   72  sudo rpm --import https://pkg.jenkins.io/redhat/jenkins.io.key
+   73  sudo yum install jenkins -y
+   74  sudo systemctl enable jenkins
+   75  sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
+   76  sudo yum install jenkins -y
+   77  sudo systemctl enable jenkins
+   78  sudo systemctl start jenkins
+   79  sudo systemctl status jenkins
+   80  sudo systemctl start jenkins
+   81  sudo systemctl status jenkins
+   82  sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+   83  clear
+   84  history 50
+   85  ls -l
+   86  exit
+   87  clear
+   88  cd /var/lib/jenkins/
+   89  ls
+   90  cd jobs
+   91  ls
+   92  exit
+   93   cd /var/lib/jenkins/
+   94  cd jobs
+   95  ls
+   96  cd git-scm-aws-ec2-job/
+   97  ls
+   98  cd builds/
+   99  ls
+  100  cd ..
+  101  ls
+  102  cd workspace/
+  103  ls
+  104  cd git-scm-aws-ec2-job/
+  105  ls
+  106  clear
+  107  systemctl status openjdk
+  108  systemctl status java
+  109  sudo /usr/sbin/alternatives --config java
+  110  sudo /usr/sbin/alternatives --config javac
+  111  mvn
+  112  sudo /usr/sbin/alternatives --config mvn
+  113  sudo /usr/sbin/alternatives --config java
+  114  clear
+  115  echo $JAVA_HOME
+  116  java --version
+  117  clear
+  118  java --version
+  119  sudo /usr/sbin/alternatives --config java
+  120  cd /usr/share/maven
+  121  yum install maven
+  122  cd /usr/share/maven
+  123  ls -l
+  124  cd ~
+  125  clear
+  126* git clone https://github.com/preethid/addressbook.git https://github.com/preethid/addressbook.git
+  127  cd addressbook/
+  128  ls
+  129  mvn compile
+  130  ls
+  131  cd  /root/addressbook/target/classes
+  132  ls
+  133  cd com
+  134  cd add
+  135  ls
+  136  cd edurekademo/
+  137  ls
+  138  cd utilities/
+  139  ls -
+  140  ls
+  141  cd /root/addressbook/
+  142  mvn package
+  143  mvn --version
+  144  alternatives --configjava
+  145  alternatives --config java
+  146  clear
+  147  vim /etc/profile
+  148  alternatives --config java
+  149  vim /etc/profile
+  150  echo $JAVA_HOME
+  151  source /etc/profile
+  152  echo $JAVA_HOME
+  153  mvn package
+  154  alternatives --config java
+  155  mvn --version
+  156  cd /usr/lib/jenkins
+  157  cd /var/lib/jenkins
+  158  ls
+  159  cd workspace/
+  160  ls
+  161  cd ~
+  162  ls
+  163  sudo yum install java-1.8.0-openjdk-devel
+  164  alternatives --config java
+  165  vim /etc/profile
+  166  :q
+  167  clear
+  168  vim /etc/profile
+  169  source /etc/profile
+  170   echo $JAVA_HOME
+  171  vim /etc/profile
+  172  source /etc/profile
+  173   echo $JAVA_HOME
+  174  alternatives --config java
+  175  vim /etc/profile
+  176  source /etc/profile
+  177   echo $JAVA_HOME
+  178  mvn --version
+  179  cd /var/lib/jnekins
+  180  cd /var/lib/jenkins
+  181  cd workspace/
+  182  ls
+  183  cd
+  184  cd /var/lib/jenkins/workspace/JENKINS-MVN-POM-PACKAGE-JOB
+  185  ls
+  186  cd target/
+  187  ls
+  188  history 100
+  189  history 150
+  190  history 180
