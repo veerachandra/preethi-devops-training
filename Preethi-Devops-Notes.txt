@@ -160,6 +160,7 @@ Long Term Support release:
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io-2023.key
 
 =================================================
+JENKINS-MVN-POM-COMPILE-JOB
 
 Jan-23-2023::
 Linux commands
@@ -452,6 +453,7 @@ Linux commands
   145  alternatives --config java
   146  clear
   147  vim /etc/profile
+  /usr/lib/jvm/java-11-openjdk-11.0.21.0.9-1.amzn2.0.1.x86_64
   148  alternatives --config java
   149  vim /etc/profile
   150  echo $JAVA_HOME
@@ -495,3 +497,228 @@ Linux commands
   188  history 100
   189  history 150
   190  history 180
+  
+  ======================
+  
+  26-jan-2024
+  ================
+  in jenkins server node/slave we are using new instance of ec2 by generation ssh public and private key=============adding user 
+  in both master and new node
+  $ ssh -i "veera-kernal-ec2-instance.pem" ec2-user@ec2-15-206-160-112.ap-south-1.compute.amazonaws.com (slave1 172.31.32.116)
+  ssh -i "veera-kernal-ec2-instance.pem" ec2-user@ec2-13-201-118-33.ap-south-1.compute.amazonaws.com (master)
+  master instance
+  =========================
+  Instance ID
+i-069b099c900adac38 (Veera-AWS-master-Instance)
+Open an SSH client.
+
+Locate your private key file. The key used to launch this instance is veera-kernal-ec2-instance.pem
+
+Run this command, if necessary, to ensure your key is not publicly viewable.
+ chmod 400 "veera-kernal-ec2-instance.pem"
+
+Connect to your instance using its Public DNS:
+ ec2-13-201-118-33.ap-south-1.compute.amazonaws.com
+
+Example:
+
+ ssh -i "veera-kernal-ec2-instance.pem" ec2-user@ec2-13-201-118-33.ap-south-1.compute.amazonaws.com
+ 
+ 
+ Instance ID
+ i-069b099c900adac38 (Veera-AWS-master-Instance)
+Public IPv4 address
+ 13.201.118.33 |open address 
+Private IPv4 addresses
+ 172.31.43.192
+ AWS EC2 master instance abve
+ 
+  ===========================
+===========================================
+slave/node new instance
+
+Instance ID
+ i-091805bfd06b8116a (jenkins-slavenode-1)
+Public IPv4 address
+ 15.206.160.112 |open address 
+Private IPv4 addresses
+ 172.31.32.116
+
+Instance ID
+i-091805bfd06b8116a (jenkins-slavenode-1)
+Open an SSH client.
+
+Locate your private key file. The key used to launch this instance is veera-kernal-ec2-instance.pem
+
+Run this command, if necessary, to ensure your key is not publicly viewable.
+ chmod 400 "veera-kernal-ec2-instance.pem"
+
+Connect to your instance using its Public DNS:
+ ec2-15-206-160-112.ap-south-1.compute.amazonaws.com
+
+Example:
+
+ ssh -i "veera-kernal-ec2-instance.pem" ec2-user@ec2-15-206-160-112.ap-south-1.compute.amazonaws.com
+
+======================================
+  [root@ip-172-31-32-116 tmp]# history 50
+    1  useradd slave1
+    2  passwdslave1
+    3  passwd slave1
+    4  vim /etc/ssh/sshd_config (for the new user authentication we need password based auth) here in this we need to enable pass auth and later auth-key can be used )
+    5  systemctl restart sshd ( deamon service we can do after the above cmd also while in /etc/sudoers for adding the new users in master)
+    6  sudo yum install java-1.8.0-openjdk-devel
+    7  amazon-linux-extras install java-openjdk11
+    8  alternatives --config java
+    9  clear
+   10  vim /etc/profile
+   11  source /etc/source
+   12  source /etc/profile
+   13  echo $JAVA_HOME
+   14  echo $PATH
+   15  alternatives --config java
+   16  ls
+   17  cd /tmp
+   18  ls
+   19  cd workspace/
+   20  ls
+   21  yum install git
+   22  yum install maven
+   23  ls
+   24  cd JENKINS-MVN-POM-COMPILE-JOB/
+   25  ls
+   26  cd target
+   27  cd /tmp
+   28  cd tools
+   29  ls
+   30  cd tools/
+
+[slave1@ip-172-31-43-192 .ssh]$ history 100
+    1  ls
+    2  ls -a
+    3  ssh-keygen
+    4  ls -a
+    5  cd .ssh
+    6  ls
+    7  ssh-copy-id -i slave1@172.31.32.116
+    8  ssh 'slave1@172.31.32.116'
+    9  history 70
+   10  history 100
+[slave1@ip-172-31-43-192 .ssh]$
+=========================================================
+27-01-2024
+-==============
+At master
+we need to add user called slave1 who can created in slave machine and added in /etc/sudoers giving permission to access
+the slave manchine
+## Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+slave1  slave1=NOPASSWD: ALL
+
+https://www.youtube.com/watch?v=8zy46v6YsxE&list=PL-N63JxTmeNG1ah181craHvopQaJrbJ2H&index=8
+Linux File & SUDO permissions for Beginners
+File persimission commands
+========================
+[usr1@ip-172-31-43-192 tmp]$ history 100
+    1  cd /tmp
+    2  touch file1.txt
+    3  ls
+    4  vi file.txt
+    5  cat file.txt
+    6  sudo su -
+    7  exit
+    8  chmod 764 file1
+    9  chmod 764 file1.txt
+   10  chmod 764 /tmp/file1.txt
+   11  ls -
+   12  ls -l
+   13  cd tmp
+   14  ls -l
+   15  whiami
+   16  whoami
+   17  cd /tmp
+   18  ls -l
+   19  clear
+   20  touch scriptcmds.txt
+   21  vi scriptcmds
+   22  ls -l
+   23  chmod 764 scriptcmds.txt
+   24  ls -l
+   25  car scriptcmds.txt
+   26  cat scriptcmds.txt
+   27  cat scriptcmds
+   28  chmod 764 scriptcmds
+   29  ls -l
+   30  ./scriptcmds
+   31  ls -l
+   32  cd cmddir
+
+important
+---
+ 260  netstat -ntlp
+  261  ps -ef | grep jenkins
+  262  sudo systemctl start jenkins
+  263  ps -ef | grep jenkins
+  264  systemctl status jenkins
+  265  clear
+  266  useradd user1
+  267  useradd slave1
+  268  passwd slave1
+  269  clear
+  270  vim /etc/sudoers
+  271  systemctl restart sshd
+  272  su - slave1
+  273  cls
+  274  clear
+  275  history 100
+  276  history 190
+  277  vim /etc/sudoers
+  278  cls
+  279  clear
+  280  whereis ssh
+  281  whereis sshd
+  282  whereis /etc/profile
+  283  whereis etc
+  284  cd /user/local.etc
+  285  cd /user/local/etc
+  286  whereis etc
+  287  ls
+  288  cd /user/local
+  289  cls
+  290  cd/etc
+  291  cd /etc
+  292  ls
+  293  clear
+  294  cat passwd
+  295  cd..
+  296  cd ..
+  297  cat /etc/passwd
+  298  id ec2-user
+  299  id slave1
+  300  clear
+  301  adduser usr1
+  302  adduser usr2
+  303  passwd usr1
+  304  passwd usr2
+  305  clear
+  306  sudo /etc/passwd
+  307  cat /etc/passwd
+  308  cls
+  309  clear
+  310  groupadd devops-grp-1
+  311  usermod -a -G devops-grp-1 usr1
+  312  usermod -a -G devops-grp-1 usr2
+  313  id usr1
+  314  cat /etc/group
+  315  clear
+  316  su - usr1
+  317  clear
+  318  cd tmp
+  319  ls -l
+  320  chgrp devops-group-1 file
+  321  chgrp devops-grp-1 file
+  322  chgrp devops-grp-1 file.txt
+  
+  all config cmds will be under /etc/
+  all binaries cmds will be under /usr/
+
